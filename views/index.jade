@@ -1,0 +1,28 @@
+extend layout
+
+block content
+    h1 Add new contact
+    form(method='POST', action='/contact')
+        p Name:
+        input#title(type='text', name='name')
+        p Phone no.:
+        input#title(type='text', name='phone')
+        p: button(type='submit') Add new contact
+
+    h1 Add new database
+    form(method='POST', action='/createdb')
+        p Database name:
+        input#title(type='text', name='dbname')
+        p: button(type='submit') Add new database
+
+    h1 Delete existing contact
+    form(method='DELETE', action='/contact')
+        p Phone no.:
+        input#title(type='text', name='phone')
+        p: button(type='submit') Delete contact
+    
+    h1 View specific contact
+    form(method='GET', action='/contact')
+        p Phone no.:
+        input#title(type='text', name='phone')
+        p: button(type='submit') Search contact
