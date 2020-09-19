@@ -1,0 +1,83 @@
+<div class="container">
+    <h2 class="page-header">Add Contact</h2><hr>
+    <form (submit) = "addContact()">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" [(ngModel)]="this.first_name" name="first_name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" [(ngModel)] = "this.last_name" name="last_name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label>Age</label>
+        <input type="text" [(ngModel)] = "this.age" name="age" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" [(ngModel)] = "this.phone_number" name="phone_number" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" [(ngModel)] = "this.address" name="address" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input type="text" [(ngModel)] = "this.city" name="city" class="form-control">
+      </div>
+      <input type="submit" class="btn btn-success" value="Add">
+    </form>
+</div>
+
+<br><br>
+
+<div class='container'>
+    <h2 class="page-header">Existing Contacts</h2><hr>
+    <div class='row'>
+      <div class="col">
+        <strong>First Name</strong>
+      </div>
+      <div class="col">
+        <strong>Last Name</strong>
+      </div>
+      <div class="col">
+        <strong>Age</strong>
+      </div>
+      <div class="col">
+        <strong>Phone Number</strong>
+      </div>
+      <div class="col">
+        <strong>Address</strong>
+      </div>
+      <div class="col">
+        <strong>City</strong>
+      </div>
+      <div class="col">
+        <br><br>
+      </div>
+    </div>
+    <div *ngFor = "let contact of contacts" class="row">
+        <div class="col">
+            {{contact.first_name}}
+        </div>
+        <div class="col">
+        	{{contact.last_name}}
+        </div>
+        <div class="col">
+        	{{contact.age}}
+      	</div>
+        <div class="col">
+              {{contact.phone_number}}
+            </div>
+        <div class="col">
+              {{contact.address}}
+        </div>
+        <div class="col">
+              {{contact.city}}
+        </div>
+        <div class='col'>
+          <input type="button" (click) = "deleteContact(contact._id)" value="Delete" class="btn btn-danger">
+          <br><br>
+        </div>
+	</div>
+</div>
